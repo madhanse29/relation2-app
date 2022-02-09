@@ -18,7 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/capital', function () {
-    $capital = Country::find(2)->capital;
-    return $capital;
+// Route::get('/capital', function () {
+//     $capital = Country::find(2)->capital;
+//     return $capital;
+// });
+
+
+Route::get('/villages', function () {
+    $villages = Country::find(1)->villages;
+    return $villages;
 });

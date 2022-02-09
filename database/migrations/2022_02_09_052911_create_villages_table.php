@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('capitals', function (Blueprint $table) {
+        Schema::create('villages', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('prime_minister_id');
-            $table->string('capital_name');
-            $table->string('capital_population');
+            $table->unsignedInteger('city_id');
+            $table->string('village_name');
+            $table->string('village_population');
             $table->timestamps();
-            $table->foreign('prime_minister_id')
+            $table->foreign('city_id')
             ->references('id')
-            ->on('prime_ministers');
+            ->on('cities');
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('capitals');
+        Schema::dropIfExists('villages');
     }
 };

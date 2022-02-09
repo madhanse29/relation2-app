@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Capital extends Model
+class Village extends Model
 {
     use HasFactory;
 
-    public function prime_minister(){
-        return $this->belongsTo(PrimeMinister::class);
+    public function cities(){
+        return $this->belongsTo(City::class);
     }
 }
